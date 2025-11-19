@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>T-Rex Developer AI</title>
+
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -33,7 +44,20 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Inter", sans-serif;
+      }
+
+      /* Font Classes */
+      .zen-dots {
+        font-family: "Zen Dots", cursive;
+        font-weight: 400;
+      }
+
+      .dm-sans {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .albert-sans {
+        font-family: "Albert Sans", sans-serif;
       }
 
       body {
@@ -41,6 +65,7 @@
         color: var(--light);
         height: 100vh;
         overflow: hidden;
+        font-family: "DM Sans", sans-serif;
       }
 
       /* Welcome Screen */
@@ -79,6 +104,7 @@
       .logo-main p {
         color: var(--gray);
         font-size: 1.2rem;
+        font-family: "DM Sans", sans-serif;
       }
 
       .welcome-card {
@@ -107,6 +133,7 @@
         transition: all 0.3s;
         width: 100%;
         margin-bottom: 15px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .btn-welcome:hover {
@@ -124,6 +151,7 @@
         width: 100%;
         cursor: pointer;
         transition: all 0.3s;
+        font-family: "DM Sans", sans-serif;
       }
 
       .btn-secondary:hover {
@@ -162,6 +190,7 @@
         border-radius: 8px;
         font-weight: 500;
         transition: all 0.3s;
+        font-family: "DM Sans", sans-serif;
       }
 
       .auth-tab.active {
@@ -185,6 +214,7 @@
         padding: 12px 15px;
         border-radius: 10px;
         margin-bottom: 15px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .form-control:focus {
@@ -212,6 +242,7 @@
         width: 100%;
         margin-bottom: 20px;
         transition: all 0.3s;
+        font-family: "DM Sans", sans-serif;
       }
 
       .btn-login:hover {
@@ -224,6 +255,7 @@
         margin: 20px 0;
         color: var(--gray);
         position: relative;
+        font-family: "DM Sans", sans-serif;
       }
 
       .divider::before {
@@ -265,6 +297,7 @@
         gap: 8px;
         font-weight: 500;
         transition: all 0.3s;
+        font-family: "DM Sans", sans-serif;
       }
 
       .btn-social:hover {
@@ -286,11 +319,70 @@
         text-align: center;
         margin-top: 20px;
         line-height: 1.5;
+        font-family: "DM Sans", sans-serif;
       }
 
       .terms-text a {
         color: var(--primary);
         text-decoration: none;
+      }
+
+      .compact-terms {
+        font-size: 11px;
+        color: var(--gray);
+        text-align: center;
+        margin-top: 15px;
+        line-height: 1.4;
+      }
+
+      /* Terms Modal */
+      .terms-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 4000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .terms-content {
+        background: var(--dark);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 30px;
+      }
+
+      .terms-content h4 {
+        font-family: "Zen Dots", cursive;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .terms-section {
+        margin-bottom: 20px;
+      }
+
+      .terms-section h5 {
+        color: var(--light);
+        margin-bottom: 10px;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .terms-section p {
+        color: var(--gray);
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        font-family: "DM Sans", sans-serif;
       }
 
       /* Main App */
@@ -332,6 +424,9 @@
         transition: all 0.3s;
         width: 100%;
         margin-bottom: 10px;
+        font-family: "Zen Dots", cursive;
+        font-size: 14px;
+        letter-spacing: 0.5px;
       }
 
       .new-chat-btn:hover {
@@ -352,6 +447,7 @@
         transition: all 0.3s;
         width: 100%;
         font-size: 14px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .incognito-btn:hover {
@@ -380,6 +476,7 @@
         color: white;
         width: 100%;
         font-size: 14px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .search-box input:focus {
@@ -397,6 +494,8 @@
         text-transform: uppercase;
         margin-bottom: 10px;
         padding: 0 10px;
+        font-family: "Zen Dots", cursive;
+        letter-spacing: 1px;
       }
 
       .nav-item {
@@ -411,6 +510,7 @@
         transition: all 0.3s;
         margin-bottom: 2px;
         font-size: 14px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .nav-item:hover {
@@ -437,6 +537,7 @@
         gap: 10px;
         font-size: 14px;
         margin-bottom: 2px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .chat-item:hover {
@@ -454,6 +555,7 @@
         align-items: center;
         gap: 10px;
         cursor: pointer;
+        font-family: "DM Sans", sans-serif;
       }
 
       .user-avatar {
@@ -465,6 +567,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        font-family: "DM Sans", sans-serif;
       }
 
       /* Main Content */
@@ -483,6 +586,13 @@
         align-items: center;
       }
 
+      .header h2 {
+        font-family: "Zen Dots", cursive;
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+
       .model-selector {
         display: flex;
         align-items: center;
@@ -493,6 +603,7 @@
         padding: 6px 12px;
         cursor: pointer;
         font-size: 14px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .add-model-btn {
@@ -507,6 +618,7 @@
         justify-content: center;
         cursor: pointer;
         font-size: 12px;
+        font-family: "DM Sans", sans-serif;
       }
 
       .chat-container {
@@ -531,6 +643,8 @@
         background: var(--primary);
         color: white;
         border-bottom-right-radius: 4px;
+        font-family: "Albert Sans", sans-serif;
+        font-weight: 500;
       }
 
       .ai-message {
@@ -539,6 +653,8 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         color: var(--light);
         border-bottom-left-radius: 4px;
+        font-family: "Albert Sans", sans-serif;
+        font-weight: 400;
       }
 
       .thinking-bubble {
@@ -549,6 +665,7 @@
         margin-top: 10px;
         font-style: italic;
         color: var(--gray);
+        font-family: "Albert Sans", sans-serif;
       }
 
       .tech-learning {
@@ -557,6 +674,46 @@
         border-radius: 12px;
         padding: 15px;
         margin-top: 10px;
+        font-family: "Albert Sans", sans-serif;
+      }
+
+      .step-guidance {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid var(--secondary);
+        border-radius: 12px;
+        padding: 15px;
+        margin-top: 10px;
+        font-family: "Albert Sans", sans-serif;
+      }
+
+      .step-number {
+        display: inline-block;
+        background: var(--secondary);
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 24px;
+        margin-right: 8px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .continue-btn {
+        background: var(--secondary);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+      }
+
+      .continue-btn:hover {
+        background: #2563eb;
       }
 
       .model-training-notice {
@@ -566,6 +723,7 @@
         padding: 10px;
         margin-top: 10px;
         font-size: 12px;
+        font-family: "Albert Sans", sans-serif;
       }
 
       /* Input Area */
@@ -617,6 +775,7 @@
         resize: none;
         min-height: 24px;
         max-height: 120px;
+        font-family: "Albert Sans", sans-serif;
       }
 
       .message-input:focus {
@@ -648,6 +807,7 @@
         margin-top: 10px;
         font-size: 12px;
         color: var(--gray);
+        font-family: "DM Sans", sans-serif;
       }
 
       /* Tools Modal */
@@ -674,6 +834,7 @@
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.3s;
+        font-family: "DM Sans", sans-serif;
       }
 
       .tool-option:hover {
@@ -708,8 +869,14 @@
         padding: 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
-        justify-content: space-between;
+        justify-content: between;
         align-items: center;
+      }
+
+      .settings-header h4 {
+        font-family: "Zen Dots", cursive;
+        font-weight: 400;
+        letter-spacing: 0.5px;
       }
 
       .settings-section {
@@ -717,12 +884,20 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
+      .settings-section h6 {
+        font-family: "Zen Dots", cursive;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+      }
+
       .settings-item {
         display: flex;
-        justify-content: space-between;
+        justify-content: between;
         align-items: center;
         padding: 15px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-family: "DM Sans", sans-serif;
       }
 
       .settings-item:last-child {
@@ -774,59 +949,6 @@
         transform: translateX(26px);
       }
 
-      /* Model Modal */
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 2000;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .model-modal {
-        background: var(--dark);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        width: 90%;
-        max-width: 500px;
-        max-height: 80vh;
-        overflow-y: auto;
-      }
-
-      .model-header {
-        padding: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .model-options {
-        padding: 15px;
-      }
-
-      .model-option {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 12px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s;
-        margin-bottom: 8px;
-      }
-
-      .model-option:hover {
-        background: var(--hover);
-      }
-
-      .model-option.active {
-        background: rgba(16, 185, 129, 0.2);
-        border: 1px solid var(--primary);
-      }
-
       /* Mobile Responsive */
       @media (max-width: 768px) {
         .sidebar {
@@ -866,14 +988,20 @@
     <div id="welcomeScreen">
       <div class="welcome-container">
         <div class="logo-main">
-          <h1>🦖 T-Rex Developer</h1>
-          <p>Learn New Technologies with AI</p>
+          <h1 class="zen-dots">🦖 T-Rex Developer</h1>
+          <p>Your Personalized AI Coding Mentor</p>
         </div>
         <div class="welcome-card">
-          <h3 style="margin-bottom: 20px">Welcome to T-Rex Developer!</h3>
-          <p style="color: var(--gray); margin-bottom: 30px; line-height: 1.6">
+          <h3 class="zen-dots" style="margin-bottom: 20px">
+            Welcome to T-Rex Developer!
+          </h3>
+          <p
+            style="color: var(--gray); margin-bottom: 30px; line-height: 1.6"
+            class="dm-sans"
+          >
             Your AI-powered companion for learning new technologies, coding, and
-            building amazing projects. Start your journey today!
+            building amazing projects. Get step-by-step guidance for technical
+            tasks and instant content creation.
           </p>
           <button class="btn-welcome" onclick="startNewChat()">
             <i class="fas fa-plus"></i> Start New Chat
@@ -882,10 +1010,10 @@
             <i class="fas fa-user"></i> Login to Your Account
           </button>
         </div>
-        <div class="terms-text">
-          By continuing, you agree to our <a href="#">Terms of Service</a> and
-          <a href="#">Privacy Policy</a>. Your conversations help improve our AI
-          models (you can disable this in settings).
+        <div class="compact-terms">
+          By continuing, you agree to our
+          <a href="#" onclick="showTerms()">Terms</a> and
+          <a href="#" onclick="showTerms()">Privacy Policy</a>.
         </div>
       </div>
     </div>
@@ -894,8 +1022,8 @@
     <div id="loginScreen">
       <div class="login-container">
         <div class="logo-main">
-          <h1>🦖 T-Rex Developer</h1>
-          <p>Learn New Technologies with AI</p>
+          <h1 class="zen-dots">🦖 T-Rex Developer</h1>
+          <p>Your Personalized AI Coding Mentor</p>
         </div>
 
         <div class="auth-tabs">
@@ -934,7 +1062,12 @@
             </button>
           </div>
 
-          <a href="#" class="skip-link" onclick="goBackToWelcome()">
+          <a
+            href="#"
+            class="skip-link"
+            onclick="goBackToWelcome()"
+            style="font-family: 'DM Sans', sans-serif"
+          >
             <i class="fas fa-arrow-left"></i> Back to Welcome
           </a>
         </div>
@@ -966,12 +1099,6 @@
             />
           </div>
 
-          <div class="model-training-notice">
-            <i class="fas fa-robot"></i>
-            <strong>Model Training:</strong> Your conversations help improve our
-            AI (Enabled by default)
-          </div>
-
           <button class="btn btn-login" onclick="signup()">
             <i class="fas fa-user-plus"></i> Create Account
           </button>
@@ -987,36 +1114,230 @@
             </button>
           </div>
 
-          <div class="terms-text">
+          <div class="compact-terms">
             By creating an account, you agree to our
-            <a href="#">Terms of Service</a>, <a href="#">Privacy Policy</a>,
-            and that your conversations may be used to improve our AI models
-            (configurable in settings). You also acknowledge that you have read
-            and understood our <a href="#">Data Processing Agreement</a> and
-            consent to the collection and use of your data as described in our
-            comprehensive privacy documentation which includes but is not
-            limited to data retention policies, third-party sharing protocols,
-            and your rights under applicable data protection laws including GDPR
-            and CCPA compliance requirements.
+            <a href="#" onclick="showTerms()">Terms of Service</a> and
+            <a href="#" onclick="showTerms()">Privacy Policy</a>.
           </div>
 
-          <a href="#" class="skip-link" onclick="goBackToWelcome()">
+          <a
+            href="#"
+            class="skip-link"
+            onclick="goBackToWelcome()"
+            style="font-family: 'DM Sans', sans-serif"
+          >
             <i class="fas fa-arrow-left"></i> Back to Welcome
           </a>
         </div>
       </div>
     </div>
 
+    <!-- Terms Modal -->
+    <div class="terms-modal" id="termsModal">
+      <div class="terms-content">
+        <h4>Terms of Service & Privacy Policy</h4>
+
+        <div class="terms-section">
+          <h5>Personalized AI Behavior</h5>
+          <p>
+            Your AI assistant provides step-by-step guidance for technical tasks
+            and complete outputs for content creation. This personalized
+            behavior is enabled by default but can be customized in settings.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h5>Data Usage & Model Training</h5>
+          <p>
+            Your conversations help improve our AI models. You can disable this
+            feature in settings at any time. We respect your privacy and follow
+            strict data protection protocols.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h5>Service Usage</h5>
+          <p>
+            Our AI assistant is designed for educational and development
+            purposes. Please use it responsibly and in accordance with
+            applicable laws and regulations.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h5>Limitations</h5>
+          <p>
+            The AI may not provide medical, legal, or financial advice. Always
+            verify critical information from official sources.
+          </p>
+        </div>
+
+        <button class="btn btn-login w-100" onclick="hideTerms()">
+          I Understand
+        </button>
+      </div>
+    </div>
+
     <!-- Main App -->
     <div id="mainApp">
-      <!-- Same main app content as before -->
+      <div class="app-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="new-chat-section">
+            <button class="new-chat-btn" onclick="newChat()">
+              <i class="fas fa-plus"></i> New chat
+            </button>
+            <button class="incognito-btn" onclick="startIncognito()">
+              <i class="fas fa-user-secret"></i> Incognito mode
+            </button>
+          </div>
+
+          <div class="search-container">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Search chats..." />
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-title">Today</div>
+            <div class="chat-item active">
+              <i class="fas fa-comment"></i>
+              Welcome to T-Rex
+            </div>
+            <div class="chat-item">
+              <i class="fas fa-code"></i>
+              React.js Learning
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-title">Yesterday</div>
+            <div class="chat-item">
+              <i class="fas fa-calculator"></i>
+              Math Calculation
+            </div>
+            <div class="chat-item">
+              <i class="fas fa-language"></i>
+              Translation Help
+            </div>
+          </div>
+
+          <div class="user-section" onclick="showSettings()">
+            <div class="user-avatar">T</div>
+            <div>
+              <div style="font-size: 14px; font-weight: 500">Tanzeel</div>
+              <div style="font-size: 12px; color: var(--gray)">
+                Personalized Mode: ON
+              </div>
+            </div>
+            <div style="margin-left: auto">
+              <i class="fas fa-cog"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+          <div class="header">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()">
+              <i class="fas fa-bars"></i>
+            </button>
+            <h2>How can I help you code today?</h2>
+            <div class="model-selector" onclick="showModelModal()">
+              <i class="fas fa-robot"></i>
+              <span>Personalized AI</span>
+              <div class="add-model-btn">+</div>
+            </div>
+          </div>
+
+          <div class="chat-container" id="chatContainer">
+            <div class="message ai-message">
+              <strong>🦖 T-Rex Developer:</strong> Hey there! I'm your
+              personalized AI coding mentor.
+              <div class="tech-learning">
+                <strong>🚀 Here's how I work:</strong>
+                <div>
+                  • <strong>Step-by-step</strong> for coding, debugging,
+                  installations
+                </div>
+                <div>
+                  • <strong>Complete outputs</strong> for notes, MCQs, summaries
+                </div>
+                <div>
+                  • <strong>Friendly & direct</strong> guidance - no corporate
+                  talk!
+                </div>
+                <div>
+                  • <strong>Error handling</strong> with practical solutions
+                </div>
+              </div>
+              <div class="thinking-bubble">
+                <i class="fas fa-cog"></i> Personalized Mode: ACTIVE |
+                <i class="fas fa-shield-alt"></i> Safe & Honest Guidance
+              </div>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <div class="input-wrapper">
+              <div class="message-input-container">
+                <button class="attach-btn" onclick="toggleToolsModal()">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <textarea
+                  class="message-input"
+                  placeholder="Ask for coding help, create content, or learn something new..."
+                  rows="1"
+                ></textarea>
+                <button class="send-btn" onclick="sendMessage()">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+
+              <!-- Tools Modal -->
+              <div class="tools-modal" id="toolsModal">
+                <div class="tool-option" onclick="activateTool('calculator')">
+                  <i class="fas fa-calculator"></i>
+                  Calculator
+                </div>
+                <div class="tool-option" onclick="activateTool('translator')">
+                  <i class="fas fa-language"></i>
+                  Translator
+                </div>
+                <div class="tool-option" onclick="activateTool('dictionary')">
+                  <i class="fas fa-book"></i>
+                  Dictionary
+                </div>
+                <div class="tool-option" onclick="activateTool('weather')">
+                  <i class="fas fa-cloud-sun"></i>
+                  Weather
+                </div>
+                <div class="tool-option" onclick="activateTool('image')">
+                  <i class="fas fa-image"></i>
+                  Image Generator
+                </div>
+                <div class="tool-option" onclick="activateTool('code')">
+                  <i class="fas fa-code"></i>
+                  Code Helper
+                </div>
+              </div>
+
+              <div class="input-footer">
+                <i class="fas fa-star"></i> Personalized AI Assistant - Step by
+                Step Guidance for Technical Tasks
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Settings Modal -->
     <div class="settings-modal" id="settingsModal">
       <div class="settings-content">
         <div class="settings-header">
-          <h4 class="mb-0">Settings</h4>
+          <h4 class="mb-0">Personalization Settings</h4>
           <button
             class="btn-close btn-close-white"
             onclick="hideSettings()"
@@ -1024,20 +1345,28 @@
         </div>
 
         <div class="settings-section">
-          <h6>Account</h6>
+          <h6>AI Behavior</h6>
           <div class="settings-item">
             <div>
-              <div>Email</div>
-              <small class="text-muted">user@example.com</small>
+              <div>Personalized Guidance</div>
+              <small class="text-muted">Step-by-step for technical tasks</small>
             </div>
-            <i class="fas fa-chevron-right"></i>
+            <label class="switch">
+              <input type="checkbox" checked id="personalizedMode" />
+              <span class="slider"></span>
+            </label>
           </div>
           <div class="settings-item">
             <div>
-              <div>Subscription</div>
-              <small class="text-muted">Free Plan</small>
+              <div>Model Training</div>
+              <small class="text-muted"
+                >Help improve AI with your conversations</small
+              >
             </div>
-            <i class="fas fa-chevron-right"></i>
+            <label class="switch">
+              <input type="checkbox" checked id="modelTraining" />
+              <span class="slider"></span>
+            </label>
           </div>
         </div>
 
@@ -1060,19 +1389,7 @@
         </div>
 
         <div class="settings-section">
-          <h6>AI & Privacy</h6>
-          <div class="settings-item">
-            <div>
-              <div>Model Training</div>
-              <small class="text-muted"
-                >Help improve AI with your conversations</small
-              >
-            </div>
-            <label class="switch">
-              <input type="checkbox" checked />
-              <span class="slider"></span>
-            </label>
-          </div>
+          <h6>Privacy & Safety</h6>
           <div class="settings-item">
             <div>
               <div>Chat History</div>
@@ -1096,27 +1413,11 @@
         </div>
 
         <div class="settings-section">
-          <h6>Support</h6>
-          <div class="settings-item">
-            <div>Help & FAQ</div>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="settings-item">
-            <div>Contact Support</div>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="settings-item">
-            <div>Privacy Policy</div>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="settings-item">
-            <div>Terms of Service</div>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </div>
-
-        <div class="settings-section">
-          <button class="btn btn-secondary w-100" onclick="logout()">
+          <button
+            class="btn btn-secondary w-100"
+            onclick="logout()"
+            style="font-family: 'DM Sans', sans-serif"
+          >
             <i class="fas fa-sign-out-alt"></i> Logout
           </button>
         </div>
@@ -1125,11 +1426,58 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      // AI Behavior Configuration
+      const aiBehavior = {
+        personalizedMode: true,
+        modelTraining: true,
+
+        // Technical tasks that need step-by-step guidance
+        technicalTasks: [
+          "code",
+          "debug",
+          "install",
+          "setup",
+          "configure",
+          "build",
+          "deploy",
+          "fix",
+          "error",
+          "bug",
+        ],
+
+        // Content tasks that need complete output
+        contentTasks: [
+          "note",
+          "mcq",
+          "summary",
+          "explain",
+          "create",
+          "write",
+          "generate",
+        ],
+
+        isTechnicalTask(message) {
+          return this.technicalTasks.some((task) =>
+            message.toLowerCase().includes(task)
+          );
+        },
+
+        isContentTask(message) {
+          return this.contentTasks.some((task) =>
+            message.toLowerCase().includes(task)
+          );
+        },
+      };
+
+      // Current step tracking for technical tasks
+      let currentTask = null;
+      let currentStep = 0;
+      let taskSteps = [];
+
       // Welcome Screen Functions
       function startNewChat() {
         document.getElementById("welcomeScreen").style.display = "none";
         document.getElementById("mainApp").style.display = "block";
-        // Initialize main app here
         initializeMainApp();
       }
 
@@ -1156,6 +1504,15 @@
         document.getElementById("signupForm").style.display = "block";
         document.querySelectorAll(".auth-tab")[0].classList.remove("active");
         document.querySelectorAll(".auth-tab")[1].classList.add("active");
+      }
+
+      // Terms Modal
+      function showTerms() {
+        document.getElementById("termsModal").style.display = "flex";
+      }
+
+      function hideTerms() {
+        document.getElementById("termsModal").style.display = "none";
       }
 
       // Login Functions
@@ -1186,19 +1543,355 @@
         hideSettings();
       }
 
-      // Initialize Main App
-      function initializeMainApp() {
-        // Add the main app initialization code here
-        // This would include all the chat functionality from previous versions
-        console.log("Main app initialized");
+      // AI Response Logic
+      function getAIResponse(message) {
+        if (!aiBehavior.personalizedMode) {
+          return getDefaultResponse(message);
+        }
+
+        if (currentTask && currentStep < taskSteps.length) {
+          return continueTask(message);
+        }
+
+        if (aiBehavior.isTechnicalTask(message)) {
+          return startTechnicalTask(message);
+        } else if (aiBehavior.isContentTask(message)) {
+          return getContentResponse(message);
+        } else {
+          return getDefaultResponse(message);
+        }
       }
 
-      // Close settings when clicking outside
+      function startTechnicalTask(message) {
+        currentTask = message;
+        currentStep = 0;
+
+        // Generate steps based on the task
+        if (message.toLowerCase().includes("install")) {
+          taskSteps = [
+            "First, let's check if you have the necessary prerequisites. What operating system are you using?",
+            "Great! Now let me guide you through downloading the required files...",
+            "Next, we'll run the installation command. Ready to proceed?",
+            "Finally, let's verify the installation worked correctly.",
+          ];
+        } else if (message.toLowerCase().includes("code")) {
+          taskSteps = [
+            "Let's start by setting up your development environment. What programming language are you using?",
+            "Okay, now let's create the basic project structure. Should we begin?",
+            "Next, we'll write the main functionality. Tell me when you're ready.",
+            "Finally, let's test the code and fix any issues.",
+          ];
+        } else {
+          taskSteps = [
+            "Let me break this down into manageable steps. First, let's identify the main requirements...",
+            "Now, let's tackle the first part. Ready to continue?",
+            "Great! Moving on to the next phase...",
+            "Finally, let's review and test everything.",
+          ];
+        }
+
+        return {
+          type: "step",
+          content: `
+                    <strong>🦖 T-Rex Developer:</strong> I'll guide you through this step by step!
+                    <div class="step-guidance">
+                        <div><span class="step-number">1</span> ${taskSteps[0]}</div>
+                        <button class="continue-btn" onclick="sendStepResponse('ready')">I'm Ready →</button>
+                    </div>
+                    <div class="thinking-bubble">
+                        <i class="fas fa-footsteps"></i> Step 1 of ${taskSteps.length} | Personalized Guidance Active
+                    </div>
+                `,
+        };
+      }
+
+      function continueTask(userResponse) {
+        currentStep++;
+
+        if (currentStep >= taskSteps.length) {
+          const response = {
+            type: "complete",
+            content: `
+                        <strong>🦖 T-Rex Developer:</strong> Excellent! We've completed all the steps. 
+                        <div class="tech-learning">
+                            <strong>🎯 Task Completed Successfully!</strong>
+                            <div>• All steps executed properly</div>
+                            <div>• No errors encountered</div>
+                            <div>• Ready for the next challenge!</div>
+                        </div>
+                    `,
+          };
+          currentTask = null;
+          currentStep = 0;
+          taskSteps = [];
+          return response;
+        }
+
+        return {
+          type: "step",
+          content: `
+                    <strong>🦖 T-Rex Developer:</strong> Great! Let's continue...
+                    <div class="step-guidance">
+                        <div><span class="step-number">${
+                          currentStep + 1
+                        }</span> ${taskSteps[currentStep]}</div>
+                        <button class="continue-btn" onclick="sendStepResponse('continue')">Continue →</button>
+                    </div>
+                    <div class="thinking-bubble">
+                        <i class="fas fa-footsteps"></i> Step ${
+                          currentStep + 1
+                        } of ${taskSteps.length} | In Progress
+                    </div>
+                `,
+        };
+      }
+
+      function sendStepResponse(response) {
+        const chatContainer = document.getElementById("chatContainer");
+        const userMsg = document.createElement("div");
+        userMsg.className = "message user-message";
+        userMsg.textContent =
+          response === "ready"
+            ? "I'm ready to start!"
+            : "Continue to next step";
+        chatContainer.appendChild(userMsg);
+
+        // Simulate AI response
+        setTimeout(() => {
+          const aiResponse = continueTask(response);
+          const aiMsg = document.createElement("div");
+          aiMsg.className = "message ai-message";
+          aiMsg.innerHTML = aiResponse.content;
+          chatContainer.appendChild(aiMsg);
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 1000);
+
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      function getContentResponse(message) {
+        return {
+          type: "content",
+          content: `
+                    <strong>🦖 T-Rex Developer:</strong> Here's your complete content:
+                    <div class="tech-learning">
+                        <strong>📝 Content Created Successfully</strong>
+                        <div>• Comprehensive notes generated</div>
+                        <div>• MCQs with answers included</div>
+                        <div>• Summary with key points</div>
+                        <div>• Ready to use immediately</div>
+                    </div>
+                    <div class="thinking-bubble">
+                        <i class="fas fa-bolt"></i> Complete Output Delivered | Content Mode
+                    </div>
+                `,
+        };
+      }
+
+      function getDefaultResponse(message) {
+        return {
+          type: "default",
+          content: `
+                    <strong>🦖 T-Rex Developer:</strong> I understand you're asking about: "${message}"
+                    <div style="margin-top: 8px;">Here's what I can help you with based on my analysis...</div>
+                    <div class="thinking-bubble">
+                        <i class="fas fa-brain"></i> Analysis Complete | Standard Response
+                    </div>
+                `,
+        };
+      }
+
+      // Chat Functions
+      function sendMessage() {
+        const input = document.querySelector(".message-input");
+        const message = input.value.trim();
+
+        if (!message) return;
+
+        const chatContainer = document.getElementById("chatContainer");
+
+        // Add user message
+        const userMsg = document.createElement("div");
+        userMsg.className = "message user-message";
+        userMsg.textContent = message;
+        chatContainer.appendChild(userMsg);
+
+        input.value = "";
+
+        // Show thinking bubble
+        const thinkingBubble = document.createElement("div");
+        thinkingBubble.className = "message ai-message";
+        thinkingBubble.innerHTML = `
+                <div class="thinking-bubble">
+                    <i class="fas fa-spinner fa-spin"></i> Analyzing your request... 
+                    <span style="float: right;">
+                        <i class="fas fa-cog"></i> Personalized Mode
+                    </span>
+                </div>
+            `;
+        chatContainer.appendChild(thinkingBubble);
+
+        // Get AI response
+        setTimeout(() => {
+          thinkingBubble.remove();
+
+          const aiResponse = getAIResponse(message);
+          const aiMsg = document.createElement("div");
+          aiMsg.className = "message ai-message";
+          aiMsg.innerHTML = aiResponse.content;
+          chatContainer.appendChild(aiMsg);
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        }, 1500);
+
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      // Tools Modal
+      function toggleToolsModal() {
+        const modal = document.getElementById("toolsModal");
+        modal.style.display =
+          modal.style.display === "block" ? "none" : "block";
+      }
+
+      function activateTool(tool) {
+        const toolsModal = document.getElementById("toolsModal");
+        toolsModal.style.display = "none";
+
+        const responses = {
+          calculator:
+            "🧮 Calculator activated! Perfect for mathematical calculations and conversions.",
+          translator:
+            "🌐 Translator ready! I can help translate between multiple languages.",
+          dictionary:
+            "📚 Dictionary loaded! Get definitions, examples, and usage tips.",
+          weather:
+            "⛅ Weather tool active! Check current conditions and forecasts.",
+          image: "🎨 Image generator ready! Describe what you want to create.",
+          code: "💻 Code helper activated! I can assist with debugging and programming concepts.",
+        };
+
+        const chatContainer = document.getElementById("chatContainer");
+        const aiMsg = document.createElement("div");
+        aiMsg.className = "message ai-message";
+        aiMsg.innerHTML = `
+                <strong>🦖 T-Rex Developer:</strong> ${responses[tool]}
+                <div class="thinking-bubble">
+                    <i class="fas fa-tools"></i> Tool activated: ${tool} | Ready to assist
+                </div>
+            `;
+        chatContainer.appendChild(aiMsg);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      // Incognito Mode
+      function startIncognito() {
+        document.getElementById("chatContainer").innerHTML = `
+                <div class="message ai-message">
+                    <strong>🦖 T-Rex Developer:</strong> 
+                    <div>🔒 Incognito Mode Activated</div>
+                    <div style="margin-top: 8px;">Your conversations in this chat will not be saved to history.</div>
+                    <div class="thinking-bubble">
+                        <i class="fas fa-user-secret"></i> Private session active | No history saved
+                    </div>
+                </div>
+            `;
+      }
+
+      // New Chat
+      function newChat() {
+        currentTask = null;
+        currentStep = 0;
+        taskSteps = [];
+
+        document.getElementById("chatContainer").innerHTML = `
+                <div class="message ai-message">
+                    <strong>🦖 T-Rex Developer:</strong> New chat started! Ready to help you with personalized guidance. 
+                    <div class="thinking-bubble">
+                        <i class="fas fa-cog"></i> Personalized Mode: ACTIVE | Step-by-step guidance enabled
+                    </div>
+                </div>
+            `;
+      }
+
+      // Mobile Sidebar
+      function toggleSidebar() {
+        document.querySelector(".sidebar").classList.toggle("active");
+      }
+
+      // Initialize Main App
+      function initializeMainApp() {
+        console.log("Personalized AI Assistant initialized");
+
+        // Load settings
+        const personalizedMode = document.getElementById("personalizedMode");
+        const modelTraining = document.getElementById("modelTraining");
+
+        if (personalizedMode) {
+          personalizedMode.checked = aiBehavior.personalizedMode;
+          personalizedMode.addEventListener("change", function () {
+            aiBehavior.personalizedMode = this.checked;
+            updateUserStatus();
+          });
+        }
+
+        if (modelTraining) {
+          modelTraining.checked = aiBehavior.modelTraining;
+          modelTraining.addEventListener("change", function () {
+            aiBehavior.modelTraining = this.checked;
+          });
+        }
+
+        updateUserStatus();
+      }
+
+      function updateUserStatus() {
+        const statusElement = document.querySelector(
+          ".user-section div div:nth-child(2)"
+        );
+        if (statusElement) {
+          statusElement.textContent = `Personalized Mode: ${
+            aiBehavior.personalizedMode ? "ON" : "OFF"
+          }`;
+        }
+      }
+
+      // Enter key support
+      document
+        .querySelector(".message-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+
+      // Auto-resize textarea
+      document
+        .querySelector(".message-input")
+        .addEventListener("input", function () {
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+        });
+
+      // Close modals when clicking outside
       document.addEventListener("click", function (e) {
-        if (e.target.classList.contains("settings-modal")) {
+        if (
+          e.target.classList.contains("settings-modal") ||
+          e.target.classList.contains("terms-modal")
+        ) {
           hideSettings();
+          hideTerms();
+        }
+        if (
+          !e.target.closest(".attach-btn") &&
+          !e.target.closest(".tools-modal")
+        ) {
+          document.getElementById("toolsModal").style.display = "none";
         }
       });
+
+      // Initialize
+      showLoginForm();
     </script>
   </body>
 </html>
