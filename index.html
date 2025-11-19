@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Rex Developer AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --secondary: #3B82F6;
+            --dark: #1F2937;
+            --darker: #111827;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --sidebar: #202123;
+            --hover: #2A2B32;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--darker);
+            color: var(--light);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Welcome Screen */
+        #welcomeScreen {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .welcome-container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .logo-main {
+            margin-bottom: 40px;
+        }
+
+        .logo-main h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .logo-main p {
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .btn-welcome {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .btn-welcome:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--gray);
+            color: var(--gray);
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--light);
+            color: var(--light);
+        }
+
+        /* Login Screen */
+        #loginScreen {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            background: var(--primary);
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+            color: var(--light);
+            box-shadow: none;
+        }
+
+        .form-control::placeholder {
+            color: var(--gray);
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            width: 100%;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--gray);
+            position: relative;
+        }
+
+        .divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .divider::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-social {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            padding: 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-social:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .btn-google {
+            border-color: #DB4437;
+        }
+
+        .btn-facebook {
+            border-color: #4267B2;
+        }
+
+        .terms-text {
+            font-size: 12px;
+            color: var(--gray);
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .terms-text a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Main App */
+        #mainApp {
+            display: none;
+            height: 100vh;
+        }
+
+        .app-wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--sidebar);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .new-chat-section {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .new-chat-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .new-chat-btn:hover {
+            background: var(--hover);
+        }
+
+        .incognito-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .incognito-btn:hover {
+            background: var(--hover);
+            color: var(--light);
+        }
+
+        .search-container {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+        }
+
+        .nav-section {
+            padding: 10px;
+        }
+
+        .nav-title {
+            color: var(--gray);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
+
+        .nav-item:hover {
+            background: var(--hover);
+        }
+
+        .nav-item.active {
+            background: var(--hover);
+        }
+
+        .chat-history {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .chat-item {
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .chat-item:hover {
+            background: var(--hover);
+        }
+
+        .chat-item.active {
+            background: var(--hover);
+        }
+
+        .user-section {
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--darker);
+        }
+
+        .header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .model-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add-model-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 16px 20px;
+            border-radius: 18px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .ai-message {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            border-bottom-left-radius: 4px;
+        }
+
+        .thinking-bubble {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--gray);
+        }
+
+        .tech-learning {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .model-training-notice {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--secondary);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        /* Input Area */
+        .input-container {
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .message-input-container {
+            display: flex;
+            align-items: flex-end;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 12px 15px;
+            transition: all 0.3s;
+        }
+
+        .message-input-container:focus-within {
+            border-color: var(--primary);
+        }
+
+        .attach-btn {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        .attach-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .message-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--light);
+            font-size: 14px;
+            resize: none;
+            min-height: 24px;
+            max-height: 120px;
+        }
+
+        .message-input:focus {
+            outline: none;
+        }
+
+        .send-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .send-btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+        }
+
+        .input-footer {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Tools Modal */
+        .tools-modal {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background: var(--sidebar);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 1000;
+        }
+
+        .tool-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tool-option:hover {
+            background: var(--hover);
+        }
+
+        /* Settings Modal */
+        .settings-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .settings-content {
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .settings-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .settings-section {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .settings-item {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--gray);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Model Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .model-modal {
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .model-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .model-options {
+            padding: 15px;
+        }
+
+        .model-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 8px;
+        }
+
+        .model-option:hover {
+            background: var(--hover);
+        }
+
+        .model-option.active {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid var(--primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                left: -260px;
+                top: 0;
+                height: 100vh;
+                z-index: 1000;
+                transition: left 0.3s;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: transparent;
+                border: none;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+            .message {
+                max-width: 95%;
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen">
+        <div class="welcome-container">
+            <div class="logo-main">
+                <h1>🦖 T-Rex Developer</h1>
+                <p>Learn New Technologies with AI</p>
+            </div>
+            <div class="welcome-card">
+                <h3 style="margin-bottom: 20px;">Welcome to T-Rex Developer!</h3>
+                <p style="color: var(--gray); margin-bottom: 30px; line-height: 1.6;">
+                    Your AI-powered companion for learning new technologies, coding, and building amazing projects. Start your journey today!
+                </p>
+                <button class="btn-welcome" onclick="startNewChat()">
+                    <i class="fas fa-plus"></i> Start New Chat
+                </button>
+                <button class="btn-secondary" onclick="showLogin()">
+                    <i class="fas fa-user"></i> Login to Your Account
+                </button>
+            </div>
+            <div class="terms-text">
+                By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. 
+                Your conversations help improve our AI models (you can disable this in settings).
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="loginScreen">
+        <div class="login-container">
+            <div class="logo-main">
+                <h1>🦖 T-Rex Developer</h1>
+                <p>Learn New Technologies with AI</p>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="showLoginForm()">Login</div>
+                <div class="auth-tab" onclick="showSignupForm()">Sign Up</div>
+            </div>
+
+            <!-- Login Form -->
+            <div class="login-card" id="loginForm">
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your email address">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Enter your password">
+                </div>
+                <button class="btn btn-login" onclick="login()">
+                    <i class="fas fa-sign-in-alt"></i> Continue to T-Rex
+                </button>
+
+                <div class="divider">or continue with</div>
+
+                <div class="social-buttons">
+                    <button class="btn-social btn-google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                </div>
+
+                <a href="#" class="skip-link" onclick="goBackToWelcome()">
+                    <i class="fas fa-arrow-left"></i> Back to Welcome
+                </a>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="login-card" id="signupForm" style="display: none;">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Full name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email address">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Create password">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Confirm password">
+                </div>
+                
+                <div class="model-training-notice">
+                    <i class="fas fa-robot"></i> 
+                    <strong>Model Training:</strong> Your conversations help improve our AI (Enabled by default)
+                </div>
+
+                <button class="btn btn-login" onclick="signup()">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+
+                <div class="divider">or sign up with</div>
+
+                <div class="social-buttons">
+                    <button class="btn-social btn-google">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                </div>
+
+                <div class="terms-text">
+                    By creating an account, you agree to our <a href="#">Terms of Service</a>, 
+                    <a href="#">Privacy Policy</a>, and that your conversations may be used to improve our AI models 
+                    (configurable in settings). You also acknowledge that you have read and understood our 
+                    <a href="#">Data Processing Agreement</a> and consent to the collection and use of your data 
+                    as described in our comprehensive privacy documentation which includes but is not limited to 
+                    data retention policies, third-party sharing protocols, and your rights under applicable data 
+                    protection laws including GDPR and CCPA compliance requirements.
+                </div>
+
+                <a href="#" class="skip-link" onclick="goBackToWelcome()">
+                    <i class="fas fa-arrow-left"></i> Back to Welcome
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp">
+        <!-- Same main app content as before -->
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-content">
+            <div class="settings-header">
+                <h4 class="mb-0">Settings</h4>
+                <button class="btn-close btn-close-white" onclick="hideSettings()"></button>
+            </div>
+            
+            <div class="settings-section">
+                <h6>Account</h6>
+                <div class="settings-item">
+                    <div>
+                        <div>Email</div>
+                        <small class="text-muted">user@example.com</small>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="settings-item">
+                    <div>
+                        <div>Subscription</div>
+                        <small class="text-muted">Free Plan</small>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h6>Preferences</h6>
+                <div class="settings-item">
+                    <div>
+                        <div>Theme</div>
+                        <small class="text-muted">Dark</small>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="settings-item">
+                    <div>
+                        <div>Language</div>
+                        <small class="text-muted">English</small>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h6>AI & Privacy</h6>
+                <div class="settings-item">
+                    <div>
+                        <div>Model Training</div>
+                        <small class="text-muted">Help improve AI with your conversations</small>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item">
+                    <div>
+                        <div>Chat History</div>
+                        <small class="text-muted">Save your conversation history</small>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item">
+                    <div>
+                        <div>Incognito Mode</div>
+                        <small class="text-muted">Temporary private sessions</small>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h6>Support</h6>
+                <div class="settings-item">
+                    <div>Help & FAQ</div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="settings-item">
+                    <div>Contact Support</div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="settings-item">
+                    <div>Privacy Policy</div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="settings-item">
+                    <div>Terms of Service</div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <button class="btn btn-secondary w-100" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Welcome Screen Functions
+        function startNewChat() {
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('mainApp').style.display = 'block';
+            // Initialize main app here
+            initializeMainApp();
+        }
+
+        function showLogin() {
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'flex';
+        }
+
+        function goBackToWelcome() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('welcomeScreen').style.display = 'flex';
+        }
+
+        // Auth Tabs
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('signupForm').style.display = 'none';
+            document.querySelectorAll('.auth-tab')[0].classList.add('active');
+            document.querySelectorAll('.auth-tab')[1].classList.remove('active');
+        }
+
+        function showSignupForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+            document.querySelectorAll('.auth-tab')[0].classList.remove('active');
+            document.querySelectorAll('.auth-tab')[1].classList.add('active');
+        }
+
+        // Login Functions
+        function login() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('mainApp').style.display = 'block';
+            initializeMainApp();
+        }
+
+        function signup() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('mainApp').style.display = 'block';
+            initializeMainApp();
+        }
+
+        // Settings Functions
+        function showSettings() {
+            document.getElementById('settingsModal').style.display = 'flex';
+        }
+
+        function hideSettings() {
+            document.getElementById('settingsModal').style.display = 'none';
+        }
+
+        function logout() {
+            document.getElementById('mainApp').style.display = 'none';
+            document.getElementById('welcomeScreen').style.display = 'flex';
+            hideSettings();
+        }
+
+        // Initialize Main App
+        function initializeMainApp() {
+            // Add the main app initialization code here
+            // This would include all the chat functionality from previous versions
+            console.log("Main app initialized");
+        }
+
+        // Close settings when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('settings-modal')) {
+                hideSettings();
+            }
+        });
+    </script>
+</body>
+</html>
